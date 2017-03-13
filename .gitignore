@@ -1,4 +1,7 @@
-.git
 .idea
-node_modules
+.git
 .DS_Store
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
