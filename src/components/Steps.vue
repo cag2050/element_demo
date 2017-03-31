@@ -1,7 +1,7 @@
 <template>
 <div>
     引入el-steps报错：Uncaught RangeError: Maximum call stack size exceeded <br/>
-    未知原因，待解决
+    未知原因，待解决(内存泄漏了，可能是死循环了)
 </div>
 </template>
 
