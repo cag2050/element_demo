@@ -1,6 +1,7 @@
 <template>
 <div>
-2222
+    引入el-steps报错：Uncaught RangeError: Maximum call stack size exceeded <br/>
+    未知原因
 </div>
 </template>
 
