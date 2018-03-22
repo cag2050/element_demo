@@ -21,6 +21,11 @@ export default new Router({
             path: '/dynamic_select_form',
             name: '',
             component: resolve => require(['./views/dynamicSelectForm'], resolve)
+        },
+        {
+            path: '/allow_create_select',
+            name: '',
+            component: resolve => require(['./views/allowCreateSelect'], resolve)
         }
     ]
 })
