@@ -1,8 +1,8 @@
 <template>
-<div id="form">
-    <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
-        <el-form-item v-for="(domain, index) in dynamicValidateForm.domains" :label="'域名' + index" :key="domain.key" :prop="'domains.' + index + '.value'" :rules="{ required: true, message: '域名不能为空', trigger: 'blur' }">
-            <el-select v-model="domain.selectValue" placeholder="请选择" filterable allow-create default-first-option>
+<div id="dynamicSelectForm">
+    <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" class="demo-dynamic">
+        <el-form-item v-for="(domain, index) in dynamicValidateForm.domains" label="" :key="domain.key">
+            <el-select class="fl" style='margin-right:20px;width:200px' v-model="domain.selectValue" placeholder="请选择或输入属性" filterable allow-create default-first-option @change="selectChange">
                 <el-option
                     v-for="item in options"
                     :key="item.value"
@@ -10,12 +10,14 @@
                     :value="item.value">
                 </el-option>
             </el-select>
-            <el-input v-model="domain.value"></el-input>
-            <el-button @click.prevent="removeDomain(domain)">删除</el-button>
+        <!--</el-form-item>-->
+        <!--<el-form-item v-for="(domain, index) in dynamicValidateForm.domains" label="value:" :key="domain.key + 1" :prop="'domains.' + index + '.inputValue'" :rules="{ required: true, message: 'x不能为空', trigger: 'blur' }">-->
+            <el-input class="fl" style='margin-right:20px;width:200px' v-model="domain.inputValue" placeholder="请输入属性值"></el-input>
+            <el-button class="fl" style='' @click.prevent="removeDomain(domain)">删除</el-button>
         </el-form-item>
         <el-form-item>
             <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
-            <el-button @click="addDomain">新增域名</el-button>
+            <el-button @click="addDomain">新增动态表单(select加input)</el-button>
             <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
         </el-form-item>
     </el-form>
@@ -28,7 +30,7 @@
             return {
                 dynamicValidateForm: {
                     domains: [{
-                        value: '',
+                        inputValue: '',
                         selectValue: ''
                     }]
                 },
@@ -40,7 +42,15 @@
             };
         },
         methods: {
+            selectChange (value) {
+                console.log(value)
+            },
             submitForm(formName) {
+                console.log('this.dynamicValidateForm.domains[0].selectValue=')
+                console.log(this.dynamicValidateForm.domains[0].selectValue)
+                console.log('this.dynamicValidateForm.domains[0].inputValue=')
+                console.log(this.dynamicValidateForm.domains[0].inputValue)
+                /*
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
                         alert('submit!');
@@ -49,6 +59,7 @@
                         return false;
                     }
                 });
+                */
             },
             resetForm(formName) {
                 this.$refs[formName].resetFields();
@@ -61,7 +72,8 @@
             },
             addDomain() {
                 this.dynamicValidateForm.domains.push({
-                    value: '',
+                    inputValue: '',
+                    selectValue: '',
                     key: Date.now()
                 });
             }
@@ -69,6 +81,8 @@
     }
 </script>
 
-<style>
-
+<style lang="stylus">
+#dynamicSelectForm
+    .fl
+        float left
 </style>
