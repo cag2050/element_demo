@@ -14,18 +14,7 @@
 <script>
 export default {
     name: 'el-select',
-    created () {
-        console.log(111)
-        /**
-        this.$http.get('http://admin.creator.miaopai.com/credit/illegalsetting')
-            .then(function (response) {
-                console.log('response=')
-                console.log(response)
-            }).catch(function (response) {
-                console.log(response)
-            })
-        **/
-        this.options.push({value: '选项3', label: '蚵仔煎'})
+    mounted () {
     },
     data () {
         return {
