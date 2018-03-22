@@ -1,13 +1,16 @@
 # element_demo
 
-说明：  
-1. components文件夹中添加组件vue;  
-2. router/index.js中导入组件、添加路由;  
+### 功能
+1. 新增动态表单(select和input)
+
+### 说明：
+1. components文件夹中添加组件vue;
+2. router/index.js中导入组件、添加路由;
 3. App.vue添加router-link。
 
-eslint配置：  
-1. .editorconfig 修改：indent_size = 4；  
-2. .eslintrc.js 规则rules中添加一行：'indent': [2, 4, { "SwitchCase": 1 }]；  
+### eslint配置：
+1. .editorconfig 修改：indent_size = 4；
+2. .eslintrc.js 规则rules中添加一行：'indent': [2, 4, { "SwitchCase": 1 }]；
 3. build/webpack.base.config.js 在eslint-loader配置部分，在语句：include: [resolve('src/components'), resolve('test')] 中配置需要校验的目录
 
 > A Vue.js project
