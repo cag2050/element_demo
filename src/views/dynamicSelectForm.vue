@@ -17,7 +17,7 @@
         </el-form-item>
         <el-form-item>
             <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
-            <el-button @click="addDomain">新增动态表单(select加input)</el-button>
+            <el-button @click="addDomain">新增动态表单(select和input)</el-button>
             <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
         </el-form-item>
     </el-form>
