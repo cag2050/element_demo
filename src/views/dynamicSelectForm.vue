@@ -1,7 +1,7 @@
 <template>
 <div id="dynamicSelectForm">
-    <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" class="demo-dynamic">
-        <el-form-item v-for="(property, index) in dynamicValidateForm.properties" label="" :key="property.key">
+    <el-form :model="form" ref="form" class="demo-dynamic">
+        <el-form-item v-for="(property, index) in form.properties" label="" :key="property.key">
             <el-select class="fl" style='margin-right:20px;width:200px' v-model="property.selectValue" placeholder="请选择或输入属性" filterable allow-create default-first-option @change="selectChange">
                 <el-option
                     v-for="item in options"
@@ -11,14 +11,14 @@
                 </el-option>
             </el-select>
         <!--</el-form-item>-->
-        <!--<el-form-item v-for="(property, index) in dynamicValidateForm.properties" label="value:" :key="property.key + 1" :prop="'properties.' + index + '.inputValue'" :rules="{ required: true, message: 'x不能为空', trigger: 'blur' }">-->
+        <!--<el-form-item v-for="(property, index) in form.properties" label="value:" :key="property.key + 1" :prop="'properties.' + index + '.inputValue'" :rules="{ required: true, message: 'x不能为空', trigger: 'blur' }">-->
             <el-input class="fl" style='margin-right:20px;width:200px' v-model="property.inputValue" placeholder="请输入属性值"></el-input>
             <el-button class="fl" style='' @click.prevent="removeProperty(property)">删除</el-button>
         </el-form-item>
         <el-form-item>
-            <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
+            <el-button type="primary" @click="submitForm('form')">提交</el-button>
             <el-button @click="addProperty">新增动态表单(select和input)</el-button>
-            <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
+            <el-button @click="resetForm('form')">重置</el-button>
         </el-form-item>
     </el-form>
 </div>
@@ -28,7 +28,7 @@
     export default {
         data() {
             return {
-                dynamicValidateForm: {
+                form: {
                     properties: [{
                         inputValue: '',
                         selectValue: ''
@@ -46,10 +46,10 @@
                 console.log(value)
             },
             submitForm(formName) {
-                console.log('this.dynamicValidateForm.properties[0].selectValue=')
-                console.log(this.dynamicValidateForm.properties[0].selectValue)
-                console.log('this.dynamicValidateForm.properties[0].inputValue=')
-                console.log(this.dynamicValidateForm.properties[0].inputValue)
+                console.log('this.form.properties[0].selectValue=')
+                console.log(this.form.properties[0].selectValue)
+                console.log('this.form.properties[0].inputValue=')
+                console.log(this.form.properties[0].inputValue)
                 /*
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
@@ -65,13 +65,13 @@
                 this.$refs[formName].resetFields();
             },
             removeProperty(item) {
-                var index = this.dynamicValidateForm.properties.indexOf(item)
+                var index = this.form.properties.indexOf(item)
                 if (index !== -1) {
-                    this.dynamicValidateForm.properties.splice(index, 1)
+                    this.form.properties.splice(index, 1)
                 }
             },
             addProperty() {
-                this.dynamicValidateForm.properties.push({
+                this.form.properties.push({
                     inputValue: '',
                     selectValue: '',
                     key: Date.now()
