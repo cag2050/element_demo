@@ -10,8 +10,6 @@
                     :value="item.value">
                 </el-option>
             </el-select>
-        <!--</el-form-item>-->
-        <!--<el-form-item v-for="(property, index) in form.properties" label="value:" :key="property.key + 1" :prop="'properties.' + index + '.inputValue'" :rules="{ required: true, message: 'x不能为空', trigger: 'blur' }">-->
             <el-input class="fl" style='margin-right:20px;width:200px' v-model="property.inputValue" placeholder="请输入属性值"></el-input>
             <el-button class="fl" style='' @click.prevent="removeProperty(property)">删除</el-button>
         </el-form-item>
