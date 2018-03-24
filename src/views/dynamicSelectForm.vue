@@ -28,8 +28,8 @@
             return {
                 form: {
                     // properties: [{
-                    //     inputValue: '',
-                    //     selectValue: ''
+                    //     selectValue: '111',
+                    //     inputValue: '111'
                     // }]
                     properties: []
                 },
@@ -96,8 +96,8 @@
             },
             addProperty() {
                 this.form.properties.push({
-                    inputValue: '',
                     selectValue: '',
+                    inputValue: '',
                     key: Date.now()
                 });
             }
