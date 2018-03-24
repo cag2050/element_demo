@@ -27,11 +27,13 @@
         data() {
             return {
                 form: {
-                    properties: [{
-                        inputValue: '',
-                        selectValue: ''
-                    }]
+                    // properties: [{
+                    //     inputValue: '',
+                    //     selectValue: ''
+                    // }]
+                    properties: []
                 },
+                propertiesArray: [],
                 options: [{
                     value: '选项1', label: '选项1'
                 }, {
@@ -41,13 +43,37 @@
         },
         methods: {
             selectChange (value) {
-                console.log(value)
+                // console.log(value)
             },
             submitForm(formName) {
+                /*
                 console.log('this.form.properties[0].selectValue=')
                 console.log(this.form.properties[0].selectValue)
                 console.log('this.form.properties[0].inputValue=')
                 console.log(this.form.properties[0].inputValue)
+                */
+                var propertiesLen = this.form.properties.length
+                for (var i = 0; i < propertiesLen; i++) {
+                    console.log('this.form.properties[i]')
+                    if (this.form.properties[i].selectValue === '') {
+                        console.log(i + " key：" + this.form.properties[i].selectValue)
+                        this.$alert('第' + (i + 1) + '个属性项的属性为空，请输入', '提示：', {
+                            dangerouslyUseHTMLString: true
+                        });
+                        return
+                    }
+                    if (this.form.properties[i].inputValue === '') {
+                        console.log(i + " value：" + this.form.properties[i].inputValue)
+                        this.$alert('第' + (i + 1) + '个属性项的属性值为空，请输入', '提示：', {
+                            dangerouslyUseHTMLString: true
+                        });
+                        return
+                    }
+                    this.propertiesArray.push({key: this.form.properties[i].selectValue, value: this.form.properties[i].inputValue})
+                    // console.log(this.form.properties[i])
+                }
+                console.log(this.propertiesArray)
+                console.log(JSON.stringify(this.propertiesArray))
                 /*
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
