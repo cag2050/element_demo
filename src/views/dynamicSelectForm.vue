@@ -1,6 +1,7 @@
 <template>
 <div id="dynamicSelectForm">
     <el-form :model="form" ref="form" class="demo-dynamic">
+        <!--<el-form-item v-for="(property, index) in form.properties" label="">-->
         <el-form-item v-for="(property, index) in form.properties" label="" :key="property.key">
             <el-select class="fl" style='margin-right:20px;width:200px' v-model="property.selectValue" placeholder="请选择或输入属性" filterable allow-create default-first-option @change="selectChange">
                 <el-option
@@ -95,11 +96,27 @@
                 }
             },
             addProperty() {
-                this.form.properties.push({
-                    selectValue: '',
-                    inputValue: '',
-                    key: Date.now()
-                });
+                let _this = this
+                for (let i = 0; i < 2; i++) {
+                    console.log(i)
+                    // setTimeout(function () {
+                    //     _this.form.properties.push({
+                    //         selectValue: '111' + i,
+                    //         inputValue: '111' + i,
+                    //         key: Date.now() + 1
+                    //     }, 500);
+                    // })
+                    _this.form.properties.push({
+                        selectValue: '111' + i,
+                        inputValue: '111' + i,
+                        key: Date.now() + i
+                    })
+                }
+                // this.form.properties.push({
+                //     selectValue: '',
+                //     inputValue: '',
+                //     key: Date.now() + 1
+                // });
             }
         }
     }
