@@ -8,11 +8,11 @@
             :before-close="handleClose">
             <span>这是一段信息</span>
             <span slot="footer" class="dialog-footer">
-            <button id="SaveButton" onclick="console.log('click')"
-                    style="font-size:14px;float: right;position: relative;top: -10px;right: 112px;">保存工作流修改</button>
-            <el-button @click="dialogVisible = false">取 消</el-button>
-            <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-        </span>
+                <button id="SaveButton" onclick="console.log('click')"
+                        style="font-size:14px;float: right;position: relative;top: -10px;right: 112px;">保存工作流修改</button>
+                <el-button @click="dialogVisible = false">取 消</el-button>
+                <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+            </span>
         </el-dialog>
     </div>
 </template>
