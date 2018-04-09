@@ -28,6 +28,8 @@
             handleClose(done) {
                 this.$confirm('确认关闭？')
                     .then(_ => {
+                        console.log(_)
+                        console.log(typeof _)
                         done();
                     })
                     .catch(_ => {
