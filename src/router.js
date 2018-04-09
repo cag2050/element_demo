@@ -26,6 +26,11 @@ export default new Router({
             path: '/allow_create_select',
             name: '',
             component: resolve => require(['./views/allowCreateSelect'], resolve)
+        },
+        {
+            path: '/dialog_demo',
+            name: '',
+            component: resolve => require(['./views/dialogDemo'], resolve)
         }
     ]
 })
