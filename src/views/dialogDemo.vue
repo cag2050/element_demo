@@ -32,11 +32,7 @@
                     })
                     .catch(_ => {
                     });
-            },
-            save () {
-                console.log('save')
             }
-
         }
     }
 </script>
