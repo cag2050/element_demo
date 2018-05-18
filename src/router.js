@@ -31,6 +31,21 @@ export default new Router({
             path: '/dialog_demo',
             name: '',
             component: resolve => require(['./views/dialogDemo'], resolve)
+        },
+        {
+            path: '/timepicker_demo',
+            name: '',
+            component: resolve => require(['./views/TimePickerDemo'], resolve)
+        },
+        {
+            path: '/input_type_number',
+            name: '',
+            component: resolve => require(['./views/InputTypeNumber.vue'], resolve)
+        },
+        {
+            path: '/input_type_number_rule',
+            name: '',
+            component: resolve => require(['./views/InputNumberRule.vue'], resolve)
         }
     ]
 })
