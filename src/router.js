@@ -51,6 +51,11 @@ export default new Router({
             path: '/date_picker',
             name: '',
             component: resolve => require(['./views/DatePickerDemo.vue'], resolve)
+        },
+        {
+            path: '/table',
+            name: '',
+            component: resolve => require(['./views/tableDemo.vue'], resolve)
         }
     ]
 })
