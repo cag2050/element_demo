@@ -1,7 +1,7 @@
 <template>
     <div id="TimePickerDemo">
         <el-time-select
-            v-model="checkForm.day"
+            v-model="checkForm.hour"
             value-format="HH"
             format="HH"
             placeholder="选择时间"
@@ -21,12 +21,15 @@
         data() {
             return {
                 checkForm: {
-                    day: ''
+                    hour: ''
                 }
             }
         },
         methods: {
             timeChange(value) {
+                console.log(typeof this.checkForm.hour)
+                console.log(this.checkForm.hour)
+                console.log(typeof value)
                 console.log(value)
             }
         }

@@ -46,6 +46,11 @@ export default new Router({
             path: '/input_type_number_rule',
             name: '',
             component: resolve => require(['./views/InputNumberRule.vue'], resolve)
+        },
+        {
+            path: '/date_picker',
+            name: '',
+            component: resolve => require(['./views/DatePickerDemo.vue'], resolve)
         }
     ]
 })
