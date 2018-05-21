@@ -11,6 +11,7 @@
         <router-link to='/input_type_number_rule'>input框类型为数字，检验</router-link><br/>
         <router-link to='/date_picker'>日期选择器</router-link><br/>
         <router-link to='/table'>表格的formatter使用</router-link><br/>
+        <router-link to='/el_input_number'>el-input-number 例子</router-link><br/>
         <div>===下面是内容===</div>
         <router-view></router-view>
     </div>

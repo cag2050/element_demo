@@ -56,6 +56,11 @@ export default new Router({
             path: '/table',
             name: '',
             component: resolve => require(['./views/tableDemo.vue'], resolve)
+        },
+        {
+            path: '/el_input_number',
+            name: '',
+            component: resolve => require(['./views/InputNumberDemo'], resolve)
         }
     ]
 })
