@@ -12,6 +12,7 @@
         <router-link to='/date_picker'>日期选择器</router-link><br/>
         <router-link to='/table'>表格的formatter使用</router-link><br/>
         <router-link to='/el_input_number'>el-input-number 例子</router-link><br/>
+        <router-link to='/date_week_month'>date 周、月</router-link><br/>
         <div>===下面是内容===</div>
         <router-view></router-view>
     </div>

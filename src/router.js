@@ -61,6 +61,11 @@ export default new Router({
             path: '/el_input_number',
             name: '',
             component: resolve => require(['./views/InputNumberDemo'], resolve)
+        },
+        {
+            path: '/date_week_month',
+            name: '',
+            component: resolve => require(['./views/DatePickerWeekMonth'], resolve)
         }
     ]
 })
