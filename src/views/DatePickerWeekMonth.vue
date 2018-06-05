@@ -18,17 +18,26 @@
 </template>
 
 <script>
+    import moment from 'moment'
+
     export default {
         data() {
             return {
                 checkForm: {
-                    week: '',
+                    // 上周的最后一天
+                    week: new Date(moment().week(moment().week() - 0).startOf('week').valueOf()),
+                    // week: '',
                     month: ''
                 },
                 pickerOptions2: {
-                    firstDayOfWeek: 1
+                    firstDayOfWeek: 1,
+                    disabledDate (time) {
+                        return time.getTime() > Date.now() - 3600 * 1000 * 24 * 2
+                    }
                 }
             }
+        },
+        created () {
         },
         methods: {
             weekDateChange(value) {
