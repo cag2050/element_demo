@@ -6,16 +6,19 @@
             <el-table-column
                 prop="date"
                 label="日期"
+                sortable
                 :formatter="formatterColumn"
                 width="180">
             </el-table-column>
             <el-table-column
                 prop="name"
                 label="姓名"
+                sortable
                 width="180">
             </el-table-column>
             <el-table-column
                 prop="address"
+                sortable
                 label="地址">
             </el-table-column>
         </el-table>
@@ -26,6 +29,8 @@
     export default {
         data() {
             return {
+                tableData: [],
+                /*
                 tableData: [
                     {
                     date: '2016-05-02',
@@ -37,6 +42,12 @@
                     address: '上海市普陀区金沙江路 1517 弄'
                     }
                 ]
+                */
+            }
+        },
+        created () {
+            for (let i = 0; i < 1000; i++) {
+                this.tableData.push()
             }
         },
         methods: {

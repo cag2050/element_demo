@@ -66,6 +66,21 @@ export default new Router({
             path: '/date_week_month',
             name: '',
             component: resolve => require(['./views/DatePickerWeekMonth'], resolve)
-        }
+        },
+        {
+            path: '/data_tables',
+            name: '',
+            component: resolve => require(['./views/DataTablesDemo'], resolve)
+        },
+        {
+            path: '/icon',
+            name: '',
+            component: resolve => require(['./views/iconDemo'], resolve)
+        },
+{
+            path: '/tree',
+            name: '',
+            component: resolve => require(['./views/treeDemo'], resolve)
+        },
     ]
 })
