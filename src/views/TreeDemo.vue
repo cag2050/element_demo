@@ -1,6 +1,7 @@
 <template>
     <div id="TimePickerDemo">
         <el-tree
+            ref="tree"
             :data="data2"
             show-checkbox
             node-key="id"
@@ -8,6 +9,7 @@
             :default-checked-keys="[5]"
             :props="defaultProps">
         </el-tree>
+        <el-button @click="getCheckedKeys">通过 key 获取</el-button>
     </div>
 </template>
 
@@ -46,9 +48,8 @@
             }
         },
         methods: {
-            handleChange(value) {
-                console.log(typeof value)
-                console.log(value)
+            getCheckedKeys () {
+                console.log(this.$refs.tree.getCheckedKeys());
             }
         }
     }
