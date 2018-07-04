@@ -77,10 +77,15 @@ export default new Router({
             name: '',
             component: resolve => require(['./views/iconDemo'], resolve)
         },
-{
+        {
             path: '/tree',
             name: '',
             component: resolve => require(['./views/treeDemo'], resolve)
         },
+        {
+            path: '/switch',
+            name: '',
+            component: resolve => require(['./views/switchDemo'], resolve)
+        }
     ]
 })

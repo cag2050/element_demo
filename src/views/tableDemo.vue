@@ -29,20 +29,19 @@
     export default {
         data() {
             return {
-                tableData: [],
-                /*
+                // tableData: [],
                 tableData: [
                     {
-                    date: '2016-05-02',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                    }, {
-                    date: '2016-05-04',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1517 弄'
-                    }
+                        date: true,
+                        name: '王小虎',
+                        address: '上海市普陀区金沙江路 1518 弄'
+                    },
+                    // {
+                    //     date: '2016-05-04',
+                    //     name: '王小虎',
+                    //     address: '上海市普陀区金沙江路 1517 弄'
+                    // }
                 ]
-                */
             }
         },
         created () {
@@ -52,9 +51,16 @@
         },
         methods: {
             formatterColumn (row, column, cellValue, index) {
-                console.log(row)
                 let key = column.property
                 let h = this.$createElement
+                let _this = this
+                return h('el-switch', {
+                    props: {value: row.date, 'active-color': '#13ce66', 'inactive-color': '#ff4949'},
+                    on: {
+                        change: () => row.date = !row.date
+                    }
+                })
+                /*
                 return h('div', {style: 'color:#ff7b4d;'}, [
                     h('a', {attrs: {href: '/' + row[key]}}, row[key]),
                     h('span', {style: 'width:10px;display: inline-block;'}, ''),
@@ -62,6 +68,7 @@
                         h('i', {class: 'icon icon-account', style: 'color:gray'}, '')
                     ])
                 ])
+                */
             }
         }
     }

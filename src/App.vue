@@ -16,6 +16,7 @@
         <router-link to='/data_tables'>DataTables 例子</router-link> |
         <router-link to='/icon'>icon 例子</router-link> |
         <router-link to='/tree'>tree 例子</router-link> |
+        <router-link to='/switch'>switch 例子</router-link> |
         <div>===下面是内容===</div>
         <router-view></router-view>
     </div>
