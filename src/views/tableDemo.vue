@@ -53,7 +53,6 @@
             formatterColumn (row, column, cellValue, index) {
                 let key = column.property
                 let h = this.$createElement
-                let _this = this
                 return h('el-switch', {
                     props: {value: row.date, 'active-color': '#13ce66', 'inactive-color': '#ff4949'},
                     on: {
