@@ -18,8 +18,9 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
     webpack(webpackConfig, function (err, stats) {
         spinner.stop()
         if (err) throw err
-        console.log('stats')
+        console.log('stats.hash=')
         console.log(stats)
+        console.log(stats.hash)
         process.stdout.write(stats.toString({
             colors: true,
             modules: false,
@@ -27,7 +28,6 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
             chunks: false,
             chunkModules: false
         }) + '\n\n')
-
         console.log(chalk.cyan('  Build complete.\n'))
         console.log(chalk.yellow(
             '  Tip: built files are meant to be served over an HTTP server.\n' +
