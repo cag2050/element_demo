@@ -14,6 +14,8 @@ var fs = require('fs')
 var spinner = ora('building for production...')
 spinner.start()
 
+let newBuildHashStr = ''
+
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
     if (err) throw err
     webpack(webpackConfig, function (err, stats) {
@@ -22,13 +24,7 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
         console.log('stats.hash=')
         console.log(stats)
         console.log(stats.hash)
-        let json_obj = {"build_hash": stats.hash}
-        fs.writeFile('../static/js/build_hash.json', JSON.stringify(json_obj), function (err) {
-            if (err) {
-                return console.error(err);
-            }
-            console.log("数据写入成功！");
-        })
+        newBuildHashStr = stats.hash
         process.stdout.write(stats.toString({
             colors: true,
             modules: false,
@@ -41,5 +37,14 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
             '  Tip: built files are meant to be served over an HTTP server.\n' +
             '  Opening index.html over file:// won\'t work.\n'
         ))
+        let json_obj = {"build_hash": 'newBuildHashStr'}
+        fs.writeFile('../dist/static/js/build_hash.json', JSON.stringify(json_obj), function (err) {
+            if (err) {
+                return console.error(err);
+            }
+            console.log("数据写入文件：dist/static/js/build_hash.json，成功！");
+        })
     })
 })
+
+
