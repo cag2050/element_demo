@@ -21,9 +21,6 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
     webpack(webpackConfig, function (err, stats) {
         spinner.stop()
         if (err) throw err
-        console.log('stats.hash=')
-        console.log(stats)
-        console.log(stats.hash)
         newBuildHashStr = stats.hash
         process.stdout.write(stats.toString({
             colors: true,
@@ -37,12 +34,13 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
             '  Tip: built files are meant to be served over an HTTP server.\n' +
             '  Opening index.html over file:// won\'t work.\n'
         ))
-        let json_obj = {"build_hash": 'newBuildHashStr'}
-        fs.writeFile('../dist/static/js/build_hash.json', JSON.stringify(json_obj), function (err) {
+        //
+        let json_obj = {"build_hash": newBuildHashStr}
+        fs.writeFile(path.resolve(__dirname, '../dist/static/js/build_hash.json'), JSON.stringify(json_obj), function (err) {
             if (err) {
                 return console.error(err);
             }
-            console.log("数据写入文件：dist/static/js/build_hash.json，成功！");
+            console.log("打包hash写入文件：dist/static/js/build_hash.json，成功！");
         })
     })
 })
