@@ -18,6 +18,26 @@ Vue.use(DataTables)
 
 Vue.prototype.$XLSX = XLSX
 
+Vue.http.get('/static/js/build_hash.json')
+    .then((response) => {
+        console.log(response)
+        console.log(response.data.build_hash)
+        let oldHash = localStorage.getItem('build_hash') || ''
+        if (oldHash !== response.data.build_hash) {
+            console.log('自动刷新一下')
+            localStorage.setItem('build_hash', response.data.build_hash)
+            location.reload()
+        }
+    })
+    .catch(error => {
+        console.log(error)
+    })
+
+router.beforeEach((to, from, next) => {
+    console.log(111)
+    next()
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

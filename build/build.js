@@ -42,6 +42,12 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
             }
             console.log("打包hash写入文件：dist/static/js/build_hash.json，成功！");
         })
+        fs.writeFile(path.resolve(__dirname, '../static/js/build_hash.json'), JSON.stringify(json_obj), function (err) {
+            if (err) {
+                return console.error(err);
+            }
+            console.log("打包hash写入文件：dist/static/js/build_hash.json，成功！");
+        })
     })
 })
 
