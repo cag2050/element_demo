@@ -9,6 +9,7 @@ var chalk = require('chalk')
 var webpack = require('webpack')
 var config = require('../config')
 var webpackConfig = require('./webpack.prod.conf')
+var fs = require('fs')
 
 var spinner = ora('building for production...')
 spinner.start()
@@ -21,6 +22,13 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
         console.log('stats.hash=')
         console.log(stats)
         console.log(stats.hash)
+        let json_obj = {"build_hash": stats.hash}
+        fs.writeFile('../static/js/build_hash.json', JSON.stringify(json_obj), function (err) {
+            if (err) {
+                return console.error(err);
+            }
+            console.log("数据写入成功！");
+        })
         process.stdout.write(stats.toString({
             colors: true,
             modules: false,
