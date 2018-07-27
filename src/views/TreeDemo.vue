@@ -7,7 +7,8 @@
             node-key="id"
             :default-expanded-keys="[2, 3]"
             :default-checked-keys="[5]"
-            :props="defaultProps">
+            :props="defaultProps"
+            :check-strictly='false'>
         </el-tree>
         <el-button @click="getCheckedKeys">通过 key 获取</el-button>
     </div>
