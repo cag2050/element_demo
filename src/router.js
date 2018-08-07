@@ -86,6 +86,11 @@ export default new Router({
             path: '/switch',
             name: '',
             component: resolve => require(['./views/switchDemo'], resolve)
+        },
+        {
+            path: '/menu',
+            name: '',
+            component: resolve => require(['./views/menuDemo'], resolve)
         }
     ]
 })
