@@ -91,6 +91,11 @@ export default new Router({
             path: '/menu',
             name: '',
             component: resolve => require(['./views/menuDemo'], resolve)
+        },
+        {
+            path: '/dynamic_two_input',
+            name: '',
+            component: resolve => require(['./views/dynamicTwoInputForm'], resolve)
         }
     ]
 })
