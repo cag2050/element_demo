@@ -78,7 +78,7 @@ export default new Router({
             component: resolve => require(['./views/iconDemo'], resolve)
         },
         {
-            path: '/tree',
+            path: '/tree_second_level',
             name: '',
             component: resolve => require(['./views/TreeSecondLevelDemo'], resolve)
         },
@@ -96,6 +96,11 @@ export default new Router({
             path: '/dynamic_two_input',
             name: '',
             component: resolve => require(['./views/dynamicTwoInputForm'], resolve)
+        },
+        {
+            path: '/tree_three_level',
+            name: '',
+            component: resolve => require(['./views/TreeThreeLevelDemo'], resolve)
         }
     ]
 })

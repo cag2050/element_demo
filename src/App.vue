@@ -15,10 +15,11 @@
         <router-link to='/date_week_month'>date 周、月</router-link> |
         <router-link to='/data_tables'>DataTables 例子</router-link> |
         <router-link to='/icon'>icon 例子</router-link> |
-        <router-link to='/tree'>tree 例子</router-link> |
+        <router-link to='/tree_second_level'>tree 例子：2层</router-link> |
         <router-link to='/switch'>switch 例子</router-link> |
         <router-link to='/menu'>menu 例子</router-link> |
         <router-link to='/dynamic_two_input'>动态添加2个input表单</router-link> |
+        <router-link to='/tree_three_level'>tree 例子：3层</router-link> |
         <div>===下面是内容===</div>
         <router-view></router-view>
     </div>
