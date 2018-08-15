@@ -80,7 +80,7 @@ export default new Router({
         {
             path: '/tree',
             name: '',
-            component: resolve => require(['./views/treeDemo'], resolve)
+            component: resolve => require(['./views/TreeSecondLevelDemo'], resolve)
         },
         {
             path: '/switch',
