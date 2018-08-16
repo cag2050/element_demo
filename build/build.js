@@ -21,7 +21,9 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
     webpack(webpackConfig, function (err, stats) {
         spinner.stop()
         if (err) throw err
+
         newBuildHashStr = stats.hash
+
         process.stdout.write(stats.toString({
             colors: true,
             modules: false,
@@ -34,7 +36,8 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
             '  Tip: built files are meant to be served over an HTTP server.\n' +
             '  Opening index.html over file:// won\'t work.\n'
         ))
-        //
+
+        // 将打包hash字符串写入2个路径下的文件
         let json_obj = {"build_hash": newBuildHashStr}
         fs.writeFile(path.resolve(__dirname, '../dist/static/js/build_hash.json'), JSON.stringify(json_obj), function (err) {
             if (err) {
@@ -42,11 +45,12 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
             }
             console.log("打包hash写入文件：dist/static/js/build_hash.json，成功！");
         })
-        fs.writeFile(path.resolve(__dirname, '../static/js/build_hash.json'), JSON.stringify(json_obj), function (err) {
+        // 为了在dev开发环境下也可以使用，在 src/build_hash.json 也写一下。
+        fs.writeFile(path.resolve(__dirname, '../src/build_hash.json'), JSON.stringify(json_obj), function (err) {
             if (err) {
                 return console.error(err);
             }
-            console.log("打包hash写入文件：dist/static/js/build_hash.json，成功！");
+            console.log("打包hash写入文件：src/build_hash.json，成功！");
         })
     })
 })

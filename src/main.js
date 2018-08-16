@@ -34,7 +34,20 @@ Vue.http.get('/static/js/build_hash.json')
     })
 
 router.beforeEach((to, from, next) => {
-    console.log(111)
+    // build_hash.json 文件在开发环境和生产环境路径不同，在 build/build.js 文件中有说明。
+    let buildHashJsonDev = require('./build_hash.json')
+    let newBuildHash = buildHashJsonDev.build_hash
+    console.log('newBuildHash')
+    console.log(newBuildHash)
+    let oldBuildHash = localStorage.getItem('build_hash') || ''
+    console.log('oldBuildHash')
+    console.log(oldBuildHash)
+    if (oldBuildHash !== newBuildHash) {
+        console.log('auto refresh')
+        localStorage.setItem('build_hash', newBuildHash)
+        next()
+        location.reload()
+    }
     next()
 })
 
