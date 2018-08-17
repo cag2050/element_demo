@@ -14,7 +14,7 @@ var fs = require('fs')
 var spinner = ora('building for production...')
 spinner.start()
 
-//
+// 将当前时间戳写入json文件
 let json_obj = {"build_str": new Date().getTime().toString()}
 fs.writeFile(path.resolve(__dirname, '../src/build_str.json'), JSON.stringify(json_obj), function (err) {
     if (err) {
@@ -47,6 +47,7 @@ function realBuild () {
                 '  Tip: built files are meant to be served over an HTTP server.\n' +
                 '  Opening index.html over file:// won\'t work.\n'
             ))
+            // 复制json到dist相应目录下
             copyFile(path.resolve(__dirname, '../src/build_str.json'), path.resolve(__dirname, '../dist/static/js/build_str.json'))
             console.log('复制 src/build_str.json 到 dist/static/js/build_str.json：成功')
         })
