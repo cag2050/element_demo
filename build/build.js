@@ -14,45 +14,44 @@ var fs = require('fs')
 var spinner = ora('building for production...')
 spinner.start()
 
-let newBuildHashStr = ''
+//
+let json_obj = {"build_str": new Date().getTime().toString()}
+fs.writeFile(path.resolve(__dirname, '../src/build_str.json'), JSON.stringify(json_obj), function (err) {
+    if (err) {
+        return console.error(err);
+    }
+    console.log("打包字符串写入文件：src/build_str.json，成功！");
+    realBuild()
+})
 
-rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
-    if (err) throw err
-    webpack(webpackConfig, function (err, stats) {
-        spinner.stop()
+function copyFile(src, dist)
+{
+    fs.writeFileSync(dist, fs.readFileSync(src));
+}
+
+function realBuild () {
+    rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
         if (err) throw err
-
-        newBuildHashStr = stats.hash
-
-        process.stdout.write(stats.toString({
-            colors: true,
-            modules: false,
-            children: false,
-            chunks: false,
-            chunkModules: false
-        }) + '\n\n')
-        console.log(chalk.cyan('  Build complete.\n'))
-        console.log(chalk.yellow(
-            '  Tip: built files are meant to be served over an HTTP server.\n' +
-            '  Opening index.html over file:// won\'t work.\n'
-        ))
-
-        // 将打包hash字符串写入2个路径下的文件
-        let json_obj = {"build_hash": newBuildHashStr}
-        fs.writeFile(path.resolve(__dirname, '../dist/static/js/build_hash.json'), JSON.stringify(json_obj), function (err) {
-            if (err) {
-                return console.error(err);
-            }
-            console.log("打包hash写入文件：dist/static/js/build_hash.json，成功！");
-        })
-        // 为了在dev开发环境下也可以使用，在 src/build_hash.json 也写一下。
-        fs.writeFile(path.resolve(__dirname, '../src/build_hash.json'), JSON.stringify(json_obj), function (err) {
-            if (err) {
-                return console.error(err);
-            }
-            console.log("打包hash写入文件：src/build_hash.json，成功！");
+        webpack(webpackConfig, function (err, stats) {
+            spinner.stop()
+            if (err) throw err
+            process.stdout.write(stats.toString({
+                colors: true,
+                modules: false,
+                children: false,
+                chunks: false,
+                chunkModules: false
+            }) + '\n\n')
+            console.log(chalk.cyan('  Build complete.\n'))
+            console.log(chalk.yellow(
+                '  Tip: built files are meant to be served over an HTTP server.\n' +
+                '  Opening index.html over file:// won\'t work.\n'
+            ))
+            copyFile(path.resolve(__dirname, '../src/build_str.json'), path.resolve(__dirname, '../dist/static/js/build_str.json'))
+            console.log('复制 src/build_str.json 到 dist/static/js/build_str.json：成功')
         })
     })
-})
+}
+
 
 

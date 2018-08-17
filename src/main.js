@@ -18,33 +18,18 @@ Vue.use(DataTables)
 
 Vue.prototype.$XLSX = XLSX
 
-Vue.http.get('/static/js/build_hash.json')
-    .then((response) => {
-        console.log(response)
-        console.log(response.data.build_hash)
-        let oldHash = localStorage.getItem('build_hash') || ''
-        if (oldHash !== response.data.build_hash) {
-            console.log('自动刷新一下')
-            localStorage.setItem('build_hash', response.data.build_hash)
-            location.reload()
-        }
-    })
-    .catch(error => {
-        console.log(error)
-    })
-
 router.beforeEach((to, from, next) => {
-    // build_hash.json 文件在开发环境和生产环境路径不同，在 build/build.js 文件中有说明。
-    let buildHashJsonDev = require('./build_hash.json')
-    let newBuildHash = buildHashJsonDev.build_hash
-    console.log('newBuildHash')
-    console.log(newBuildHash)
-    let oldBuildHash = localStorage.getItem('build_hash') || ''
-    console.log('oldBuildHash')
-    console.log(oldBuildHash)
-    if (oldBuildHash !== newBuildHash) {
+    // build_str.json 文件在开发环境和生产环境路径不同，在 build/build.js 文件中有说明。
+    let buildStrJson = require('./build_str.json')
+    let newBuildStr = buildStrJson.build_str
+    console.log('newBuildStr')
+    console.log(newBuildStr)
+    let oldBuildStr = localStorage.getItem('build_str') || ''
+    console.log('oldBuildStr')
+    console.log(oldBuildStr)
+    if (oldBuildStr !== newBuildStr) {
         console.log('auto refresh')
-        localStorage.setItem('build_hash', newBuildHash)
+        localStorage.setItem('build_str', newBuildStr)
         next()
         location.reload()
     }
