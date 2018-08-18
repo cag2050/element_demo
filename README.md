@@ -7,8 +7,6 @@
 2. 将打包字符串存在 localStorage 中；
 3. 进入每个路由时，比较 localStorage 中的打包字符串与文件中新的打包字符串是否一致。不一致的话，刷新页面。
 4. 将新的打包字符串，存入 localStorage。
-* 此解决方案在 vue-cli 2.x 项目中的实现：https://github.com/cag2050/element_demo
-需要修改的文件：build/build.js、src/main.js。
 
 ### 功能
 1. 新增动态表单(select和input)
