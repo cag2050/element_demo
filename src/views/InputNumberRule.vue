@@ -16,7 +16,7 @@
                     fileNum: 1
                 },
                 checkRules: {
-                    fileNum: {type: 'number', required: true, message: ' ', trigger: 'blur'}
+                    fileNum: {type: 'number', required: true, message: '请输入数字', trigger: 'blur'}
                 }
             }
         },
