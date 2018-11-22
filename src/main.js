@@ -22,11 +22,7 @@ router.beforeEach((to, from, next) => {
     // build_str.json 文件在开发环境和生产环境路径不同，在 build/build.js 文件中有说明。
     let buildStrJson = require('./build_str.json')
     let newBuildStr = buildStrJson.build_str
-    console.log('newBuildStr')
-    console.log(newBuildStr)
     let oldBuildStr = localStorage.getItem('build_str') || ''
-    console.log('oldBuildStr')
-    console.log(oldBuildStr)
     if (oldBuildStr !== newBuildStr) {
         console.log('auto refresh')
         localStorage.setItem('build_str', newBuildStr)

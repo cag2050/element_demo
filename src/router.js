@@ -101,6 +101,11 @@ export default new Router({
             path: '/tree_three_level',
             name: '',
             component: resolve => require(['./views/TreeThreeLevelDemo'], resolve)
+        },
+        {
+            path: '/date_range',
+            name: '',
+            component: resolve => require(['./views/daterangeDemo'], resolve)
         }
     ]
 })
