@@ -1,15 +1,29 @@
 <template lang='pug'>
     <div id='menuDemo'>
         el-button(@click='changeProduct') 点击切换产品： {{ dropDownProduct }}
-        el-menu(v-for='(item, index1) in getAuthorizeRouters' :key='index1' class='navi fl' unique-opened router active-text-color='#147071' element-loading-text='数据加载中' style='width: 210px;overflow-x: hidden;overflow-y: scroll;' v-show="item.menuName === dropDownProduct")
-            el-menu-item(v-show='list.children.length === 0' v-for="(list, index) in getAuthorizeRouters[index1]['children']"
-        :key='list.menuUrl' :index='list.menuUrl')
+        el-menu(v-for='(item, index1) in getAuthorizeRouters'
+            :key='index1'
+            class='navi fl'
+            unique-opened
+            :default-openeds='defaultOpeneds'
+            router
+            active-text-color='#147071'
+            element-loading-text='数据加载中'
+            style='width: 210px;overflow-x: hidden;overflow-y: scroll;'
+            v-show="item.menuName === dropDownProduct")
+            el-menu-item(v-show='list.children.length === 0'
+                v-for="(list, index) in getAuthorizeRouters[index1]['children']"
+                :key='list.menuUrl' :index='list.menuUrl')
                 span.second_level(slot='title') {{ list.menuName }}
-            el-submenu(v-show='list.children.length > 0' v-for="(list, index) in getAuthorizeRouters[index1]['children']"
-        :key='list.menuName' :index='list.menuName')
+            el-submenu(v-show='list.children.length > 0'
+                v-for="(list, index) in getAuthorizeRouters[index1]['children']"
+                :key='list.menuName'
+                :index='list.menuName')
                 template(slot='title')
                     span {{ list.menuName }}
-                el-menu-item(v-for='(item, index) in list.children' :key='item.menuUrl' :index='item.menuUrl') {{ item.menuName }}
+                el-menu-item(v-for='(item, index) in list.children'
+                    :key='item.menuUrl'
+                    :index='item.menuUrl') {{ item.menuName }}
     </div>
 </template>
 
@@ -17,6 +31,7 @@
     export default {
         data() {
             return {
+                defaultOpeneds: ['产品1栏目2'],
                 dropDownProduct: '产品1',
                 getAuthorizeRouters: [{
                     'id': 226,
