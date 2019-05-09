@@ -34,11 +34,11 @@ router.beforeEach((to, from, next) => {
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  render: h => h(App),
-  template: '<App/>',
-  components: { App }
+    el: '#app',
+    router,
+    render: h => h(App),
+    template: '<App/>',
+    components: { App }
 })
 /*
 new Vue({

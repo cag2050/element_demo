@@ -15,97 +15,114 @@ export default new Router({
         {
             path: '/dynamic_input_form',
             name: '',
-            component: resolve => require(['./views/dynamicInputForm'], resolve)
+            component: () => import('./views/dynamicInputForm')
         },
         {
             path: '/dynamic_select_form',
             name: '',
-            component: resolve => require(['./views/dynamicSelectForm'], resolve)
+            component: () => import('./views/dynamicSelectForm')
         },
         {
             path: '/allow_create_select',
             name: '',
-            component: resolve => require(['./views/allowCreateSelect'], resolve)
+            component: () => import('./views/allowCreateSelect')
         },
         {
             path: '/dialog_demo',
             name: '',
-            component: resolve => require(['./views/dialogDemo'], resolve)
+            component: () => import('./views/dialogDemo')
         },
         {
             path: '/timepicker_demo',
             name: '',
-            component: resolve => require(['./views/TimePickerDemo'], resolve)
+            component: () => import('./views/TimePickerDemo')
         },
         {
             path: '/input_type_number',
             name: '',
-            component: resolve => require(['./views/InputTypeNumber.vue'], resolve)
+            component: () => import('./views/InputTypeNumber.vue')
         },
         {
             path: '/input_type_number_rule',
             name: '',
-            component: resolve => require(['./views/InputNumberRule.vue'], resolve)
+            component: () => import('./views/InputNumberRule.vue')
         },
         {
             path: '/date_picker',
             name: '',
-            component: resolve => require(['./views/DatePickerDemo.vue'], resolve)
+            component: () => import('./views/DatePickerDemo.vue')
         },
         {
             path: '/table',
             name: '',
-            component: resolve => require(['./views/tableDemo.vue'], resolve)
+            component: () => import('./views/tableDemo.vue')
         },
         {
             path: '/el_input_number',
             name: '',
-            component: resolve => require(['./views/InputNumberDemo'], resolve)
+            component: () => import('./views/InputNumberDemo')
         },
         {
             path: '/date_week_month',
             name: '',
-            component: resolve => require(['./views/DatePickerWeekMonth'], resolve)
+            component: () => import('./views/DatePickerWeekMonth')
         },
         {
             path: '/data_tables',
             name: '',
-            component: resolve => require(['./views/DataTablesDemo'], resolve)
+            component: () => import('./views/DataTablesDemo')
         },
         {
             path: '/icon',
             name: '',
-            component: resolve => require(['./views/iconDemo'], resolve)
+            component: () => import('./views/iconDemo')
         },
         {
             path: '/tree_second_level',
             name: '',
-            component: resolve => require(['./views/TreeSecondLevelDemo'], resolve)
+            component: () => import('./views/TreeSecondLevelDemo')
         },
         {
             path: '/switch',
             name: '',
-            component: resolve => require(['./views/switchDemo'], resolve)
+            component: () => import('./views/switchDemo')
         },
         {
             path: '/menu',
             name: '',
-            component: resolve => require(['./views/menuDemo'], resolve)
+            component: () => import('./views/menuDemo')
         },
         {
             path: '/dynamic_two_input',
             name: '',
-            component: resolve => require(['./views/dynamicTwoInputForm'], resolve)
+            component: () => import('./views/dynamicTwoInputForm')
         },
         {
             path: '/tree_three_level',
             name: '',
-            component: resolve => require(['./views/TreeThreeLevelDemo'], resolve)
+            component: () => import('./views/TreeThreeLevelDemo')
         },
         {
             path: '/date_range',
             name: '',
-            component: resolve => require(['./views/daterangeDemo'], resolve)
+            component: () => import('./views/daterangeDemo')
+        },
+        {
+            path: '/tabs',
+            name: '',
+            component: () => import('./views/tabsDemo/tabsDemo.vue'),
+            children: [
+                {
+                    name: 'tabFirst',
+                    path: 'tabFirst',
+                    component: () => import('./views/tabsDemo/tabFirst.vue')
+                },
+                {
+                    name: 'tabSecond',
+                    path: 'tabSecond',
+                    component: () => import('./views/tabsDemo/tabSecond.vue')
+                }
+            ]
         }
     ]
 })
