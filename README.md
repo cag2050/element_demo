@@ -3,6 +3,7 @@
 ### el-tabs 里面是嵌套路由，第一个tab下的路由，离开时提示"是否要离开当前页面"，路由网址：http://localhost:9098/tabs/tabFirst ，实现点：
 1. 跳到第二个tab下面的路由，也要提示
 2. 用户刷新页面时，tab 样式在正确的位置上
+3. 注意：用到了 el-tabs 的 before-leave 属性，element-ui 版本 2.4.11 才支持。
 
 ### SPA、单页面应用重新部署后，正在浏览的页面如何更新缓存？
 博客页面：https://www.cnblogs.com/cag2050/p/9293949.html

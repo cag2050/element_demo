@@ -4,6 +4,7 @@
             <el-tab-pane label="侵权投诉" name="tabFirst"></el-tab-pane>
             <el-tab-pane label="我的投诉" name="tabSecond"></el-tab-pane>
         </el-tabs>
+        <div>注意：用到了 el-tabs 的 before-leave 属性，element-ui 版本 2.4.11 才支持。</div>
         <router-view></router-view>
     </div>
 </template>
@@ -15,17 +16,19 @@
                 activeName: 'tabFirst'
             }
         },
-        // watch: {
-        //     '$route' (to, from) {
-        //         // console.log('this.$route')
-        //         // console.log(this.$route)
-        //         this.activeName = this.$route.name
-        //     }
-        // },
+        watch: {
+            // 路由切换时，保证 tab 样式在正确的位置上
+            '$route' (to, from) {
+                console.log('watch $route to')
+                console.log(to)
+                this.activeName = this.$route.name
+            }
+        },
         beforeRouteEnter (to, from, next) {
+            console.log('beforeRouteEnter to')
             console.log(to)
             next(vm => {
-                // 在强制刷新时，保证 tab 样式在正确的位置上
+                // 刷新时，保证 tab 样式在正确的位置上
                 vm.activeName = to.name
             })
         },
