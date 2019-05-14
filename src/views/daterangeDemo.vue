@@ -21,11 +21,10 @@
         name: 'daterange',
         data () {
             return {
-                dtArr: [moment().subtract(30, 'days').format('YYYYMMDD'), moment().format('YYYYMMDD')],
+                dtArr: [moment().subtract(7, 'days').format('YYYYMMDD'), moment().subtract(1, 'days').format('YYYYMMDD')],
                 pickerOptions1: {
                     disabledDate (time) {
-                        // 明天及以后的日期、60天以前的日期，都不可选择
-                        return time.getTime() > Date.now() || time.getTime() < Date.now() - 3600 * 1000 * 24 * 60
+                        return time.getTime() > Date.now() - 3600 * 1000 * 24 || time.getTime() < Date.now() - 3600 * 1000 * 24 * 31
                     }
                 }
             }
@@ -33,8 +32,7 @@
         methods: {
             daterangeChange (value) {
                 console.log(value)
-            },
-
+            }
         }
     }
 </script>

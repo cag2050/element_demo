@@ -26,7 +26,6 @@
             console.log(to)
             next(vm => {
                 // 在强制刷新时，保证 tab 样式在正确的位置上
-                //
                 vm.activeName = to.name
             })
         },
@@ -36,31 +35,27 @@
                 this.$router.push({name})
             },
             handleBeforeLeave (newActiveName, oldActiveName) {
-                // console.log('handleBeforeLeave')
-                // return false
-                // console.log('newActiveName')
-                // console.log(newActiveName)
-                // console.log('oldActiveName')
-                // console.log(oldActiveName)
-                /*
-                if (newActiveName === 'tabSecond') {
-
-                }
-                let promise = new Promise((resolve, reject) => {
-                    this.$confirm('离开将不保存本页修改', '提示', {
-                        confirmButtonText: '确定',
-                        cancelButtonText: '取消',
-                        type: 'warning'
-                    }).then(() => {
-                        // 你可以在这儿做些操作
-                        resolve()
-                    }).catch(err => {
-                        // 你可以在这儿做些操作
-                        reject(err)
+                if (newActiveName === 'tabSecond' && this.$route.name !== 'tabSecond') {
+                    let promise = new Promise((resolve, reject) => {
+                        this.$confirm(
+                            '您确定要离开当前页面？离开后系统将不会保留您做的修改',
+                            {
+                                cancelButtonText: '取消',
+                                confirmButtonText: '确认'
+                            }
+                        )
+                            .then(() => {
+                                // 你可以在这儿做些操作
+                                this.$router.push({name: 'tabSecond'})
+                                resolve()
+                            })
+                            .catch(err => {
+                                // 你可以在这儿做些操作
+                                reject(err)
+                            })
                     })
-                })
-                return promise
-                */
+                    return promise
+                }
             }
         }
     }
