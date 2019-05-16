@@ -6,10 +6,12 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
+    "mocker": "cross-env NO_PROXY=false node build/dev-server.js",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "file-saver": "^1.3.8",
     "vue": "^2.5.16",
     "vue-data-tables": "^3.2.0",
@@ -28,6 +30,7 @@
     "chalk": "^1.1.3",
     "connect-history-api-fallback": "^1.3.0",
     "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.26.1",
     "element-ui": "^2.4.11",
     "eslint": "^3.14.1",
@@ -45,6 +48,7 @@
     "function-bind": "^1.1.0",
     "html-webpack-plugin": "^2.28.0",
     "http-proxy-middleware": "^0.19.0",
+    "mocker-api": "^1.7.6",
     "moment": "^2.22.2",
     "opn": "^4.0.2",
     "optimize-css-assets-webpack-plugin": "^1.3.0",

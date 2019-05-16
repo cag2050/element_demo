@@ -1,5 +1,9 @@
 # element_demo
 
+### 使用网址：http://localhost:9098/axios 测试：mocker-api 的使用，步骤：
+1. 运行：`npm run mocker`
+2. 访问：http://localhost:9098/axios ，返回数据会是：mocker/index.js 中定义返回的内容。
+
 ### el-tabs 里面是嵌套路由，第一个tab下的路由，离开时提示"是否要离开当前页面"，路由网址：http://localhost:9098/tabs/tabFirst ，实现点：
 1. 跳到第二个tab下面的路由，也要提示
 2. 用户刷新页面时，tab 样式在正确的位置上

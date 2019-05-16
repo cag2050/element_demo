@@ -123,6 +123,11 @@ export default new Router({
                     component: () => import('./views/tabsDemo/tabSecond.vue')
                 }
             ]
-        }
+        },
+        {
+            path: '/axios',
+            name: '',
+            component: () => import('./views/axios')
+        },
     ]
 })

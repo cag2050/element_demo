@@ -22,6 +22,7 @@
         <router-link to='/tree_three_level'>tree 例子：3层</router-link> |
         <router-link to='/date_range'>日期范围选择框</router-link> |
         <router-link to='/tabs/tabFirst'>el-tabs 例子</router-link> |
+        <router-link to='/axios'>axios 例子</router-link> |
         <div>===下面是内容===</div>
         <router-view></router-view>
     </div>
