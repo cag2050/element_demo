@@ -4,8 +4,10 @@
 1. 安装 mocker-api： `npm install mocker-api --save-dev`
 2. package.json 文件中配置：
 `"mocker": "cross-env NO_PROXY=false node build/dev-server.js",`
-3. 运行：`npm run mocker`
-5. 访问：http://localhost:9098/axios ，返回数据会是：mocker/index.js 中定义返回的内容。
+3. 文件：build/dev-server.js 中，添加代码：`const apiMocker = require('mocker-api');`及`apiMocker(app, path.resolve('./mocker/index.js'))`
+4. 书写 `mocker/index.js`
+5. 运行：`npm run mocker`
+6. 访问：http://localhost:9098/axios ，返回数据会是：mocker/index.js 中定义返回的内容。
 
 ### el-tabs 里面是嵌套路由，第一个tab下的路由，离开时提示"是否要离开当前页面"，路由网址：http://localhost:9098/tabs/tabFirst ，实现点：
 1. 跳到第二个tab下面的路由，也要提示
