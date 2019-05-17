@@ -12,7 +12,7 @@
         },
         methods: {
             requestData () {
-                axios.get('/cag2050/element_demo/file-list/master')
+                axios.get('/cag2050/element_demo/file-list/master?token=xxx')
                     .then(res => {
                         console.log(res)
                     })
