@@ -129,5 +129,15 @@ export default new Router({
             name: '',
             component: () => import('./views/axios')
         },
+        {
+            path: '/radio_group',
+            name: '',
+            component: () => import('./views/radioGroupDemo.vue')
+        },
+        {
+            path: '/ref',
+            name: '',
+            component: () => import('./views/refDemo.vue')
+        }
     ]
 })

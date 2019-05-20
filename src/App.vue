@@ -23,6 +23,8 @@
         <router-link to='/date_range'>日期范围选择框</router-link> |
         <router-link to='/tabs/tabFirst'>el-tabs 例子</router-link> |
         <router-link to='/axios'>axios 例子</router-link> |
+        <router-link to='/radio_group'>el-radio-group 例子</router-link> |
+        <router-link to='/ref'>ref 例子</router-link> |
         <div>===下面是内容===</div>
         <router-view></router-view>
     </div>
