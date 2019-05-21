@@ -14,7 +14,7 @@
             }
         },
         methods: {
-            handleChange(value) {
+            handleChange (value) {
                 console.log(typeof value)
                 console.log(value)
             }

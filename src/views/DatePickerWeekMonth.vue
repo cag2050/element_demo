@@ -13,7 +13,9 @@
             type="month"
             value-format="yyyyMM"
             placeholder="选择月"
-            @change="monthDateChange">
+            @change="monthDateChange"
+            :picker-options="pickerOptions0"
+        >
         </el-date-picker>
     </div>
 </template>
@@ -39,6 +41,15 @@
                         }
                         return time.getTime() > Date.now() - 3600 * 1000 * 24 * parseInt(dayOfWeek)
                     }
+                },
+                pickerOptions0: {
+                    disabledDate (time) {
+                        let myDate = new Date()
+                        // 置灰小于2019年6月1日的月份，即置灰2019年5月及之前的月份
+                        // 月份是数组下标
+                        myDate.setFullYear(2019, 5, 1)
+                        return time.getTime() < myDate.getTime()
+                    }
                 }
             }
         },
@@ -46,7 +57,7 @@
             console.log(moment().week(moment().week() - 0).startOf('week').format('YYYYMMDD'))
         },
         methods: {
-            weekDateChange(value) {
+            weekDateChange (value) {
                 console.log('选择日期：')
                 console.log(value)
                 console.log(moment(value).format('YYYYMMDD'))
