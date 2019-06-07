@@ -143,6 +143,16 @@ export default new Router({
             path: '/color_picker',
             name: '',
             component: () => import('./views/colorPickerDemo.vue')
+        },
+        {
+            path: '/datePicker_type_datetime',
+            name: '',
+            component: () => import('./views/datePicker_type_datetime.vue')
+        },
+        {
+            path: '/el-date-picker_type_datetimerange',
+            name: '',
+            component: () => import('./views/el-date-picker_type_datetimerange.vue')
         }
     ]
 })
