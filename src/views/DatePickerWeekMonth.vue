@@ -44,11 +44,15 @@
                 },
                 pickerOptions0: {
                     disabledDate (time) {
-                        let myDate = new Date()
                         // 置灰小于2019年6月1日的月份，即置灰2019年5月及之前的月份
                         // 月份是数组下标
+                        /*
+                        let myDate = new Date()
                         myDate.setFullYear(2019, 5, 1)
                         return time.getTime() < myDate.getTime()
+                        */
+                        // 当前月份可选，其他月份置灰
+                        return time.getTime() > new Date().getTime() || time.getTime() < moment().subtract(1, 'days').toDate().getTime()
                     }
                 }
             }
