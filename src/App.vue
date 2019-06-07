@@ -25,6 +25,7 @@
         <router-link to='/axios'>axios 例子</router-link> |
         <router-link to='/radio_group'>el-radio-group 例子</router-link> |
         <router-link to='/ref'>ref 例子</router-link> |
+        <router-link to='/color_picker'>el-color-picker 例子</router-link> |
         <div>===下面是内容===</div>
         <router-view></router-view>
     </div>

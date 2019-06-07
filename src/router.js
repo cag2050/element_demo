@@ -138,6 +138,11 @@ export default new Router({
             path: '/ref',
             name: '',
             component: () => import('./views/refDemo.vue')
+        },
+        {
+            path: '/color_picker',
+            name: '',
+            component: () => import('./views/colorPickerDemo.vue')
         }
     ]
 })

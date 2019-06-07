@@ -6,10 +6,10 @@
 
 <script>
     export default {
-        data() {
+        data () {
             return {
                 checkForm: {
-                    nHour: ''
+                    nHour: '3'
                 }
             }
         },
