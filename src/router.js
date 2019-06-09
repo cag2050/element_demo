@@ -153,6 +153,11 @@ export default new Router({
             path: '/el-date-picker_type_datetimerange',
             name: '',
             component: () => import('./views/el-date-picker_type_datetimerange.vue')
+        },
+        {
+            path: '/for_ref',
+            name: '',
+            component: () => import('./views/for_ref.vue')
         }
     ]
 })

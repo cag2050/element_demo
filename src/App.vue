@@ -28,6 +28,7 @@
         <router-link to='/color_picker'>el-color-picker 例子</router-link> |
         <router-link to='/datePicker_type_datetime'>el-date-picker，type 为 datetime 例子</router-link> |
         <router-link to='/el-date-picker_type_datetimerange'>el-date-picker，type 为 datetimerange 例子</router-link> |
+        <router-link to='/for_ref'>for 遍历，动态添加ref例子</router-link> |
         <div>===下面是内容===</div>
         <router-view></router-view>
     </div>
