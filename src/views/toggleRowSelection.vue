@@ -71,7 +71,8 @@
                         address: '上海市普陀区金沙江路 1518 弄'
                     }
                 ],
-                multipleSelection: []
+                // 指定一个数组，存在
+                multipleSelection3: []
             }
         },
         methods: {
@@ -85,7 +86,9 @@
                 }
             },
             handleSelectionChange (val) {
-                this.multipleSelection = val
+                console.log('handleSelectionChange val')
+                console.log(val)
+                this.multipleSelection3 = val
             }
         }
     }

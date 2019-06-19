@@ -163,6 +163,11 @@ export default new Router({
             path: '/toggleRowSelection',
             name: '',
             component: () => import('./views/toggleRowSelection.vue')
+        },
+        {
+            path: '/reserve-selection',
+            name: '',
+            component: () => import('./views/reserve-selection.vue')
         }
     ]
 })
