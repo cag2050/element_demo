@@ -158,6 +158,11 @@ export default new Router({
             path: '/for_ref',
             name: '',
             component: () => import('./views/for_ref.vue')
+        },
+        {
+            path: '/toggleRowSelection',
+            name: '',
+            component: () => import('./views/toggleRowSelection.vue')
         }
     ]
 })
