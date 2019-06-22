@@ -21,6 +21,7 @@
         <el-pagination layout="prev, pager, next" :total="6" :page-size="4" @current-change="to2page">
         </el-pagination>
         <div style="margin-top: 20px">
+            {{ multipleSelection.length }}
             <el-button @click="toggleSelection([tableData3[1], tableData3[2]])">切换第二、第三行的选中状态</el-button>
             <el-button @click="toggleSelection()">取消选择</el-button>
         </div>

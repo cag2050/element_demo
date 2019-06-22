@@ -168,6 +168,16 @@ export default new Router({
             path: '/reserve-selection',
             name: '',
             component: () => import('./views/reserve-selection.vue')
+        },
+        {
+            path: '/tableCheckbox',
+            name: '',
+            component: () => import('./views/tableCheckbox.vue')
+        },
+        {
+            path: '/inputDemo',
+            name: '',
+            component: () => import('./views/inputDemo.vue')
         }
     ]
 })

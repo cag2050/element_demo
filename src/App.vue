@@ -31,6 +31,8 @@
         <router-link to='/for_ref'>for 遍历，动态添加ref例子</router-link> |
         <router-link to='/toggleRowSelection'>el-table 的 toggleRowSelection</router-link> |
         <router-link to='/reserve-selection'>el-table 的 reserve-selection</router-link> |
+        <router-link to='/tableCheckbox'>el-table 的 Checkbox</router-link> |
+        <router-link to='/inputDemo'>el-input 的 show-word-limit：显示剩余字数</router-link> |
         <div>===下面是内容===</div>
         <router-view></router-view>
     </div>
