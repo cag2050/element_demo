@@ -15,14 +15,16 @@
             }
         },
         methods: {
-            cancelRadioCheck (e) {
-                console.log(e)
-                e === this.radio2 ? this.radio2 = '' : this.radio2 = e
+            cancelRadioCheck (value) {
+                this.radio2 === value ? this.radio2 = '' : this.radio2 = value
             }
         }
     }
 </script>
 
-<style scoped>
-
+<style>
+    /* 选中后，再次点击取消选中时，去掉出现的 box-shadow 效果 */
+    .el-radio:focus:not(.is-focus):not(:active):not(.is-disabled) .el-radio__inner {
+        box-shadow: none;
+    }
 </style>
