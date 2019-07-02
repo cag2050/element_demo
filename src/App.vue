@@ -33,6 +33,7 @@
         <router-link to='/reserve-selection'>el-table 的 reserve-selection</router-link> |
         <router-link to='/tableCheckbox'>el-table 的 Checkbox</router-link> |
         <router-link to='/inputDemo'>el-input 的 show-word-limit：显示剩余字数</router-link> |
+        <router-link to='/radioCancelCheck'>单选取消勾选</router-link> |
         <div>===下面是内容===</div>
         <router-view></router-view>
     </div>
