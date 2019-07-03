@@ -183,6 +183,11 @@ export default new Router({
             path: '/radioCancelCheck',
             name: '',
             component: () => import('./views/radioCancelCheck.vue')
+        },
+        {
+            path: '/tagDemo',
+            name: '',
+            component: () => import('./views/tagDemo.vue')
         }
     ]
 })
