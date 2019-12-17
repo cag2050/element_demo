@@ -2,7 +2,7 @@
     <div id="TimePickerDemo">
         <el-form :model="checkForm" :rules="checkRules">
             <el-form-item label="检查文件个数：" prop="fileNum">
-                <el-input type="number" min="1" v-model.number="checkForm.fileNum" @change="handleChange" placeholder="请输入内容"></el-input>
+                <el-input type="number" v-model.number="checkForm.fileNum" :max="10000" @change="handleChange" placeholder="请输入内容"></el-input>
             </el-form-item>
         </el-form>
     </div>
@@ -13,7 +13,7 @@
         data() {
             return {
                 checkForm: {
-                    fileNum: 1
+                    fileNum: ''
                 },
                 checkRules: {
                     fileNum: {type: 'number', required: true, message: '请输入数字', trigger: 'blur'}

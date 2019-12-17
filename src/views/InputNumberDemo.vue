@@ -1,6 +1,6 @@
 <template>
     <div id="TimePickerDemo">
-        <el-input-number v-model="checkForm.nHour" controls-position="right" @change="handleChange" :min="1" :max="23"></el-input-number>
+        <el-input-number v-model="checkForm.nHour" controls-position="right" @change="handleChange" :max="10000"></el-input-number>
     </div>
 </template>
 
@@ -9,7 +9,7 @@
         data () {
             return {
                 checkForm: {
-                    nHour: '3'
+                    nHour: 0
                 }
             }
         },
