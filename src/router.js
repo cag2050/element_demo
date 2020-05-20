@@ -188,6 +188,11 @@ export default new Router({
             path: '/tagDemo',
             name: '',
             component: () => import('./views/tagDemo.vue')
-        }
+        },
+        {
+            path: '/textareaDemo',
+            name: '',
+            component: () => import('./views/textareaDemo.vue')
+        },
     ]
 })

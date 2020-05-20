@@ -35,6 +35,7 @@
         <router-link to='/inputDemo'>el-input 的 show-word-limit：显示剩余字数</router-link> |
         <router-link to='/radioCancelCheck'>单选取消勾选</router-link> |
         <router-link to='/tagDemo'>el-tag 例子</router-link> |
+        <router-link to='/textareaDemo'>textarea输入yaml格式内容，JSON.stringify成json后再JSON.parse</router-link> |
         <div>===下面是内容===</div>
         <router-view></router-view>
     </div>
