@@ -36,6 +36,7 @@
         <router-link to='/radioCancelCheck'>单选取消勾选</router-link> |
         <router-link to='/tagDemo'>el-tag 例子</router-link> |
         <router-link to='/textareaDemo'>textarea输入yaml格式内容，JSON.stringify成json后再JSON.parse</router-link> |
+        <router-link to='/switchDemo2'>switch 例子2：文字在组件里面</router-link> |
         <div>===下面是内容===</div>
         <router-view></router-view>
     </div>

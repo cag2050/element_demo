@@ -194,5 +194,10 @@ export default new Router({
             name: '',
             component: () => import('./views/textareaDemo.vue')
         },
+        {
+            path: '/switchDemo2',
+            name: '',
+            component: () => import('./views/switchDemo2.vue')
+        },
     ]
 })
