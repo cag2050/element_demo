@@ -9,12 +9,18 @@ import 'element-ui/lib/theme-chalk/index.css'
 import VueResource from 'vue-resource'
 import DataTables from 'vue-data-tables'
 import XLSX from 'xlsx'
+// import StickyTable from 'element-ui-sticky-table'
 
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 Vue.use(VueResource)
 Vue.use(DataTables)
+
+// global registration
+// Vue.component('sticky-table', StickyTable)
+// or directly override el-table (StickyTable is a superset of ElTable)
+// Vue.component('el-table', StickyTable)
 
 Vue.prototype.$XLSX = XLSX
 

@@ -199,5 +199,10 @@ export default new Router({
             name: '',
             component: () => import('./views/switchDemo2.vue')
         },
+        {
+            path: '/table_fixed_header',
+            name: '',
+            component: () => import('./views/tableFixedHeader.vue')
+        },
     ]
 })
