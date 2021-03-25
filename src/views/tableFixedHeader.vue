@@ -17,6 +17,26 @@
                 prop="address"
                 label="地址">
             </el-table-column>
+            <el-table-column
+                prop="address"
+                label="地址">
+            </el-table-column>
+            <el-table-column
+                prop="address"
+                label="地址">
+            </el-table-column>
+            <el-table-column
+                prop="address"
+                label="地址">
+            </el-table-column>
+            <el-table-column
+                prop="address"
+                label="地址">
+            </el-table-column>
+            <el-table-column
+                prop="address"
+                label="地址">
+            </el-table-column>
         </el-table>
     </div>
 </template>
@@ -27,7 +47,9 @@
         overflow: visible;
     }
     .el-table__header-wrapper {
-        overflow: visible;
+        // overflow: hidden; 实现表格body部分滚动时，header部分也滚动;
+        // overflow: visible; 实现不了这个效果
+        overflow: hidden;
         position: sticky;
         top: 0;
         z-index: 10;
