@@ -16,7 +16,7 @@
     "vue": "^2.5.16",
     "vue-data-tables": "^3.2.0",
     "vue-router": "2.5.2",
-    "xlsx": "^0.13.0"
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
