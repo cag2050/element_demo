@@ -204,5 +204,10 @@ export default new Router({
             name: '',
             component: () => import('./views/tableFixedHeader.vue')
         },
+        {
+            path: '/cascader_demo',
+            name: '',
+            component: () => import('./views/cascaderDemo.vue')
+        },
     ]
 })

@@ -38,6 +38,7 @@
         <router-link to='/textareaDemo'>textarea输入yaml格式内容，JSON.stringify成json后再JSON.parse</router-link> |
         <router-link to='/switchDemo2'>switch 例子2：文字在组件里面</router-link> |
         <router-link to='/table_fixed_header'>el-table 固定表头</router-link> |
+        <router-link to='/cascader_demo'>el-cascader Cascader级联选择器例子</router-link> |
         <div>===下面是内容===</div>
         <router-view></router-view>
     </div>

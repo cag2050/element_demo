@@ -44,7 +44,7 @@
                 for (var i = 0; i < propertiesLen; i++) {
                     console.log('this.form.properties[i]')
                     if (this.form.properties[i].inputValue1 === '') {
-                        console.log(i + " key：" + this.form.properties[i].inputValue1)
+                        console.log(i + ' key：' + this.form.properties[i].inputValue1)
                         this.$alert('第' + (i + 1) + '个属性项的属性为空，请输入', '提示：', {
                             dangerouslyUseHTMLString: true
                         });
